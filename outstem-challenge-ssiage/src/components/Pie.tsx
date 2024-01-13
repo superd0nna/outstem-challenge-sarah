@@ -9,13 +9,11 @@ interface PieChartData  {
     color: string
 }
 
-
 export const Pie = () => {
 
     // Initialize the useState variables
     // Dynamically update the chart based on changes made to the data
     const [convertedData, setConvertedData] = useState<PieChartData[]>([]);
-    const [myName, setMyName] = useState<string>();
 
     // Fetch data after the component has rendered
     useEffect(() => {
@@ -60,7 +58,6 @@ export const Pie = () => {
         }
         return sentimentLookup;
     }
-
 
     const convertData = (data: object): PieChartData[] => {
         const pieChartDataArr: PieChartData[] = [];
