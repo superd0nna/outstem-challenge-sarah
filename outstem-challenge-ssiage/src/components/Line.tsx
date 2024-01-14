@@ -14,19 +14,11 @@ interface Item {
     size: string
 }
 
-enum PizzaOptions {
-    cheese = 'Cheese',
-    pepperoni = 'Pepperoni',
-    deluxe = 'Deluxe',
-    hawaiian = 'Hawaiian',
-    meatlovers = "MeatLovers"
-}
-
-
 export const Line = () => {
     const init: sortedData = {
         month: [], total: []
     }
+
     const [convertedData, setConvertedData] = useState<sortedData>(init);
     useEffect(() => {
         const data = {}
@@ -79,8 +71,6 @@ export const Line = () => {
         }
         return returnValue;
     }
-
-
 
     return (
         <div className="div">
