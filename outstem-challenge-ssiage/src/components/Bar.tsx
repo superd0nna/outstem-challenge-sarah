@@ -64,7 +64,6 @@ export const Bar = () => {
         finalResult.values = [{
           "data": values
         }]
-        console.log(finalResult)
       return finalResult
     }
 
