@@ -59,7 +59,6 @@ export class DataLookup{
 
     revenueData = (data:object): number => {
         let monthlyRevenue = this.convertData(data);
-        console.log(monthlyRevenue.total)
         let total: number = 0;
         monthlyRevenue.total.forEach(element => { total+= element});
         return total

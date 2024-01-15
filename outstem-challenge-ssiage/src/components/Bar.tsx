@@ -17,7 +17,6 @@ interface GraphData {
 
 export const Bar = () => {
     const init: GraphData = {"stores": [], "values": []};
-
     const [convertedData, setConvertedData] = useState<GraphData>(init);
     useEffect(() => {
         const data = {}
