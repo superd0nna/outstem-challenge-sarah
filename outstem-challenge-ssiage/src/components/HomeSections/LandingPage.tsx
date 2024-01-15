@@ -7,6 +7,14 @@ interface ThemeProps {
 }
 
 export const LandingPage = ({theme}: ThemeProps) => {
+    const scrollToElement = (elementId: string) => {
+        const targetElement = document.getElementById(elementId);
+    
+        if (targetElement) {
+          // Using smooth scroll behavior for a smoother transition
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
     return(   
         <div className={`landing landing-${theme}`}>
             <div className='text-container'>
@@ -16,7 +24,7 @@ export const LandingPage = ({theme}: ThemeProps) => {
                         People Disappoint, <br/> But Pizza Does Not. <br/>
                     </h1>
                     <div className="btn-div">
-                        <Button onClick={() => {alert('clicked');}} size='large' variant="contained" className='btn'>Learn More</Button>
+                        <Button onClick={() => {scrollToElement("goal1")}} size='large' variant="contained" className='btn'>Explore Goals</Button>
                     </div>
                 </div>
 

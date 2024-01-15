@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Navbar } from "../components/Navbar/Navbar";
 import { LandingPage } from "../components/HomeSections/LandingPage";
 import { Pie } from "../components/Pie";
+import { PieSection } from "../components/HomeSections/PieSection";
 import { Bar } from "../components/Bar";
 import { Line } from "../components/Line";
 import { Revenue } from "../components/Revenue";
@@ -19,7 +20,7 @@ export const Home = () => {
         <div >
             <Navbar theme={theme} setTheme={setTheme}/>
             <LandingPage theme={theme}/>
-            <Pie/>
+            <PieSection theme={theme}/>
             <Bar/>
             <Line/>
             <Revenue/>

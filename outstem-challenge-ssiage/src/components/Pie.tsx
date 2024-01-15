@@ -75,7 +75,7 @@ export const Pie = () => {
     }
 
     return (
-        <div className="PieChart">
+        <div className="PieChart" id="pie">
             <center>
                 <div style={{width:"300px"}}> 
                     <PieChart series={[{
