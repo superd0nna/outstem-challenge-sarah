@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { LandingPage } from "../components/HomeSections/LandingPage";
 import { Pie } from "../components/Pie";
 import { PieSection } from "../components/HomeSections/PieSection";
-import { Bar } from "../components/Bar";
+import { BarSection } from "../components/HomeSections/BarSection";
 import { Line } from "../components/Line";
 import { Revenue } from "../components/Revenue";
 
@@ -21,7 +21,7 @@ export const Home = () => {
             <Navbar theme={theme} setTheme={setTheme}/>
             <LandingPage theme={theme}/>
             <PieSection theme={theme}/>
-            <Bar/>
+            <BarSection theme={theme}/>
             <Line/>
             <Revenue/>
         </div>

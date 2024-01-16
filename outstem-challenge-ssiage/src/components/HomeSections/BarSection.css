@@ -1,0 +1,24 @@
+.bar-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-subsection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.txtleft-dark {
+    color: white;
+    background-size: contain;
+}
+
+.bar-sect {
+    display: flex;
+}

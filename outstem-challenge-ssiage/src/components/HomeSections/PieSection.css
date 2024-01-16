@@ -12,11 +12,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100%;
     width: 100%;
 }
 
-.explanation {
+.explanation-dark {
+    background-image: url('../../assets/piesect1-dark.png');
+    color: white;
+    background-size: cover;
 
+}
+
+.explanation-light {
+    background-image: url('../../assets/piesect-light.png');
+    color: #222;
+}
+
+.graph-dark {
+    background-color: #222;
+    background-image: url('../../assets/piesect2-dark.png');
+    background-size: cover;
+
+}
+
+.graph-light {
+    background-color: #f8f7f0;
+}
+
+.left-txt {
+    margin-left: 3em;
+}
+
+.goal {
+    font-size: 1.5em;
+    color: #b10b0b;
+    text-align: center;
 }

@@ -15,6 +15,7 @@ export const LandingPage = ({theme}: ThemeProps) => {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       };
+
     return(   
         <div className={`landing landing-${theme}`}>
             <div className='text-container'>
