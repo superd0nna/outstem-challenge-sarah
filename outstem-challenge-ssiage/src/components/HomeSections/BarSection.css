@@ -1,6 +1,7 @@
 .bar-section {
     width: 100vw;
     height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,11 +15,36 @@
     width: 100%;
 }
 
-.txtleft-dark {
-    color: white;
-    background-size: contain;
+.graph-dark {
+    background-color: #222;
 }
 
-.bar-sect {
-    display: flex;
+.graph-light {
+    background-color: #f8f7f0;
+}
+
+.barexplanation-light {
+    background-image: url('../../assets/barsect-light.png');
+    background-size: cover;
+    color: #222;
+}
+
+.barexplanation-dark {
+    background-image: url('../../assets/barsect-dark.png');
+    background-size: cover;
+    color: #f8f7f0;
+}
+
+.goal {
+    font-size: 1.5em;
+    color: #b10b0b;
+    text-align: center;
+}
+
+.figure-dark {
+    color: #f8f7f0;
+}
+
+.figure-light{ 
+    color: #222;
 }

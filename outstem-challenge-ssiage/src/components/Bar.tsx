@@ -47,7 +47,7 @@ export const Bar = () => {
 
         for (const i of Object.keys(result)) {
             const pieChartItem: BarChartData = {
-                location: i.toUpperCase(),
+                location: i,
                 value: result[i],
                 color: 'red'
             };
@@ -73,7 +73,7 @@ export const Bar = () => {
         <BarChart
           xAxis={[{ scaleType: 'band', data: convertedData.stores }]}
           series={convertedData.values}
-          width={600}
+          width={650}
           height={300}
         />
       </div>

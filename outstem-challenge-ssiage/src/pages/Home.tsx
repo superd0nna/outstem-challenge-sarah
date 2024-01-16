@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from 'react';
 import { Navbar } from "../components/Navbar/Navbar";
 import { LandingPage } from "../components/HomeSections/LandingPage";
-import { Pie } from "../components/Pie";
 import { PieSection } from "../components/HomeSections/PieSection";
 import { BarSection } from "../components/HomeSections/BarSection";
 import { Line } from "../components/Line";
