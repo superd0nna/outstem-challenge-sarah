@@ -31,7 +31,6 @@
 .graph-dark {
     background-color: #222;
     background-image: url('../../assets/piesect2-dark.png');
-    background-size: cover;
 
 }
 
@@ -47,4 +46,14 @@
     font-size: 1.5em;
     color: #b10b0b;
     text-align: center;
+}
+
+
+tspan {
+    font-weight:500;
+    font-size: large;
+}
+
+.figure-dark {
+    color: #f8f7f0;
 }

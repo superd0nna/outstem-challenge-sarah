@@ -17,6 +17,7 @@ export const PieSection = ({theme}: PieSectionProps) => {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       };
+
     return (
         <div className="pie-section" id="goal1">
             <div className={`pie-subsection explanation-${theme}`}>
@@ -30,8 +31,9 @@ export const PieSection = ({theme}: PieSectionProps) => {
                 </div>
             </div>
             <div className={`pie-subsection graph-${theme}`}>
-                <div>
+                <div className={`pie-chart mb-3`}>
                     <Pie/>
+                    <p className={`mt-3 figure-${theme}`}><b>Figure 1:</b> Pie chart containing the customer reviews for Slice of Pi for the year of 2023</p>
                 </div>
             </div>
         </div>

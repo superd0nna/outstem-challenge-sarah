@@ -27,16 +27,16 @@ export const Pie = () => {
         let color: string;
         switch (sentiment) {
             case 'delighted':
-                color = '#C6F2AF';
+                color = '#688974';
                 break;
             case 'angry':
-                color = '#F4BCC7';
+                color = '#ec5336';
                 break;
             case 'happy':
-                color = '#FFF0BD';
+                color = '#f9bc75';
                 break;
             case 'sad':
-                color = '#87CEEB'
+                color = '#7695da'
                 break;
             default:
                 color = '#FFFFFF'
@@ -65,7 +65,7 @@ export const Pie = () => {
 
         for (const i of Object.keys(result)) {
             const pieChartItem: PieChartData = {
-                label: i.toUpperCase(),
+                label: i,
                 value: result[i],
                 color: getColor(i)
             };
@@ -77,14 +77,14 @@ export const Pie = () => {
     return (
         <div className="PieChart" id="pie">
             <center>
-                <div style={{width:"300px"}}> 
+                <div style={{width:"500px"}}> 
                     <PieChart series={[{
                         data: convertedData,
                         highlightScope: { faded: 'global', highlighted: 'item' },
                         faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
                         },]}
-                    width={400}
-                    height={200}/>
+                    width={565}
+                    height={400}/>
                 </div>
             </center>
         </div>
