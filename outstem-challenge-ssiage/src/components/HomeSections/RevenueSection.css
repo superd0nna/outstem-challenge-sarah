@@ -1,0 +1,51 @@
+.line-section {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-subsection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.revexplanation-dark {
+    background-image: url('../../assets/revsect-dark.png');
+    background-size: cover;
+    color: #f8f7f0;
+}
+
+.revexplanation-light {
+    background-image: url('../../assets/revsect-light.png');
+    background-size: cover;
+    color: #222;}
+
+.linegraph-light {
+    background-color: #f8f7f0;
+    color: #222;
+}
+
+.linegraph-dark {
+    background-color: #222;
+    color: #f8f7f0;
+}
+
+.goal {
+    font-size: 1.5em;
+    color: #b10b0b;
+    text-align: center;
+}
+
+.figure-dark {
+    color: #f8f7f0;
+}
+
+.figure-light{ 
+    color: #222;
+}

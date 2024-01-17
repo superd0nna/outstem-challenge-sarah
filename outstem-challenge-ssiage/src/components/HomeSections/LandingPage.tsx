@@ -17,7 +17,7 @@ export const LandingPage = ({theme}: ThemeProps) => {
       };
 
     return(   
-        <div className={`landing landing-${theme}`}>
+        <div className={`landing landing-${theme}`} id='landing'>
             <div className='text-container'>
                 <div className='subcontainer-text'>
                     <h1 className={`name-${theme}`}>A Slice of Pi</h1>

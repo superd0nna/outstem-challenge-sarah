@@ -15,7 +15,6 @@ export const Revenue = () => {
 
     return (
         <div className="div">
-            <h1>revenue</h1>
             <h1>{totalRevenue}</h1>
         </div>
     )

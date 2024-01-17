@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { LandingPage } from "../components/HomeSections/LandingPage";
 import { PieSection } from "../components/HomeSections/PieSection";
 import { BarSection } from "../components/HomeSections/BarSection";
-import { Revenue } from "../components/Revenue";
+import { RevenueSection } from "../components/HomeSections/RevenueSection";
 import { LineSection } from "../components/HomeSections/LineSection";
 
 export const Home = () => {
@@ -21,8 +21,8 @@ export const Home = () => {
             <LandingPage theme={theme}/>
             <PieSection theme={theme}/>
             <BarSection theme={theme}/>
+            <RevenueSection theme={theme}/>
             <LineSection theme = {theme}/>
-            <Revenue/>
         </div>
     )
 }

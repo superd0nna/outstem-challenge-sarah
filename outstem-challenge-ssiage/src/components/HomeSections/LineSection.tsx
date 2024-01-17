@@ -17,14 +17,14 @@ export const LineSection = ({theme}: LineSectionProps) => {
       };
 
     return (
-        <div className="line-section" id="goal3">
+        <div className="line-section" id="goal4">
             <div className={`line-subsection lineexplanation-${theme}`}>
                 <div className="ms-5">
-                    <h1 className="d-flex justify-content-center"><b className="goal">Goal 3</b></h1>
+                    <h1 className="d-flex justify-content-center"><b className="goal">Goal 4</b></h1>
                     <h1> <br/>Slice of Success: Charting the Cheesy Rise of Dough-lars!</h1>
                     <p className="description"> <br/>Create a line chart showing how much money was made per month in 2023.</p>
                     <div className="btn-div">
-                        <Button onClick={() => {scrollToElement("goal3")}} size='large' variant="contained" className='btn'>continue to Goal 3</Button>
+                        <Button onClick={() => {scrollToElement("landing")}} size='large' variant="contained" className='btn'>return home</Button>
                     </div>
                 </div>
             </div>
