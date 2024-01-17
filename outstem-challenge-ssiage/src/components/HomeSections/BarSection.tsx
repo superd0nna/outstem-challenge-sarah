@@ -26,12 +26,13 @@ export const BarSection = ({theme}: BarSectionProps) => {
                     <h1> <br/>Pizza Showdown: Charting the Cheesy Battles of 2023</h1>
                     <p className="description"> <br/>Add a simple bar chart showing how many orders were placed in each store (Kanata, Orleans... etc)</p>
                     <div className="btn-div">
-                        <Button onClick={() => {scrollToElement("goal2")}} size='large' variant="contained" className='btn'>continue to Goal 3</Button>
+                        <Button onClick={() => {scrollToElement("goal3")}} size='large' variant="contained" className='btn'>continue to Goal 3</Button>
                     </div>
                 </div>
             </div>
             <div className={`bar-subsection graph-${theme}`}>
                 <div className={`mb-3`}>
+                    <Bar/>
                     <p className={`mt-3 figure-${theme}`}><b>Figure 2:</b> Bar chart with the number of orders that were placed in each restaurant in 2023.</p>
                 </div>
             </div>

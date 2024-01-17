@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import orders from '../data/order_data.json'
 import { BarChart } from "@mui/x-charts";
-import './styles.css'
 
 
 interface BarChartData {
