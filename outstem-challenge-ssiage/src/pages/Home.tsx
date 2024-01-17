@@ -4,8 +4,8 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { LandingPage } from "../components/HomeSections/LandingPage";
 import { PieSection } from "../components/HomeSections/PieSection";
 import { BarSection } from "../components/HomeSections/BarSection";
-import { Line } from "../components/Line";
 import { Revenue } from "../components/Revenue";
+import { LineSection } from "../components/HomeSections/LineSection";
 
 export const Home = () => {
     const currTheme = localStorage.getItem('currTheme')
@@ -21,7 +21,7 @@ export const Home = () => {
             <LandingPage theme={theme}/>
             <PieSection theme={theme}/>
             <BarSection theme={theme}/>
-            <Line/>
+            <LineSection theme = {theme}/>
             <Revenue/>
         </div>
     )

@@ -73,7 +73,7 @@ export const Bar = () => {
           xAxis={[{ scaleType: 'band', data: convertedData.stores }]}
           series={convertedData.values}
           width={650}
-          height={300}
+          height={400}
         />
       </div>
     )

@@ -77,8 +77,8 @@ export const Line = () => {
             <LineChart
                 xAxis={[{ data: convertedData.month }]}
                 series={[{data: convertedData.total},]}
-                width={500}
-                height={300}
+                width={650}
+                height={400}
                 />
         </div>
     )
