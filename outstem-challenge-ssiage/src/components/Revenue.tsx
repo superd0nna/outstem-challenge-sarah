@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import orders from '../data/order_data.json'
 import { DataLookup } from "./data";
-import prices from '../data/pricing_data.json'
+import './Revenue.css'
 
 export const Revenue = () => {
     const [totalRevenue, setTotalRevenue] = useState<number>(0);
@@ -14,8 +13,10 @@ export const Revenue = () => {
     }, [])
 
     return (
-        <div className="div">
-            <h1>{totalRevenue}</h1>
+        <div className="revenue">
+            <h1>Total Revenue 2023 :</h1>
+            <h1 className="total-rev">
+            <span className="underlined underline-overflow">${totalRevenue}</span></h1>
         </div>
     )
 }

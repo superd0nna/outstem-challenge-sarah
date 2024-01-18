@@ -1,6 +1,7 @@
 import React from "react";
 import { Revenue } from "../Revenue";
 import { Button } from "@mui/material";
+import { Card } from "../Card";
 import './RevenueSection.css'
 
 interface RevenueSectionProps {
@@ -30,7 +31,10 @@ export const RevenueSection = ({theme}: RevenueSectionProps) => {
             </div>
             <div className={`line-subsection linegraph-${theme}`}>
                 <div className={`mb-3`}>
-                    <Revenue/>
+                    <Card />
+                    <div className="mt-4">
+                        <Revenue/>
+                    </div>
                 </div>
             </div>
         </div>
