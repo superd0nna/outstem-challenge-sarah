@@ -39,7 +39,65 @@ export interface PieSectionProps{
     theme: string
 }
 
+export interface PieChartData  {
+    label: string
+    value: number
+    color: string
+}
+
 export class DataLookup{ 
+    // Assign the color of the pie chart slice based on the sentiment
+    getColor = (sentiment: string): string => {
+        let color: string;
+        switch (sentiment) {
+            case 'delighted':
+                color = '#688974';
+                break;
+            case 'angry':
+                color = '#ec5336';
+                break;
+            case 'happy':
+                color = '#f9bc75';
+                break;
+            case 'sad':
+                color = '#7695da'
+                break;
+            default:
+                color = '#FFFFFF'
+        }
+        return color;
+    }
+
+    // Function that tallys up the sentiment occurences.
+    sortPieData = (data: object): Record<string, number> => {
+        const sentimentLookup: Record<string, number> = {
+            "happy": 0,
+            "angry": 0,
+            "sad": 0,
+            "delighted": 0
+        };
+        // Search dictionary key (sentiment), increment occurences. 
+        for (const i of reviews) {
+            sentimentLookup[i.sentiment] += 1;
+        }
+        return sentimentLookup;
+    }
+
+    convertPieData = (data: object): PieChartData[] => {
+        const pieChartDataArr: PieChartData[] = [];
+        const result: Record<string, number> = this.sortPieData(pieChartDataArr);
+
+        for (const i of Object.keys(result)) {
+            const pieChartItem: PieChartData = {
+                label: i,
+                value: result[i],
+                color: this.getColor(i)
+            };
+            pieChartDataArr.push(pieChartItem)
+        }
+        return pieChartDataArr;
+    }
+
     convertItemsToPrice = (data: Item[]): number => {
         let total_price: number = 0;
         for (const data_element of data) {
@@ -107,7 +165,7 @@ export class DataLookup{
           for (const subitem of order.items){
             let item = subitem as PizzaItem;
             //console.log(item.type, item.size)
-            if ((item.size == size || size == '') && (item.type == type || type == '')){
+            if ((item.size === size || size === '') && (item.type === type || type === '')){
               orderLookup[i.store] += 1;
             }
           }
@@ -130,7 +188,6 @@ export class DataLookup{
           }
   
           let values: number[] = []
-          let finalData: object = {"data": []}
   
           for (const i of barChartDataArr) {
             finalResult.stores.push(i.location);

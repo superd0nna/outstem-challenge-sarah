@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
-
+import '@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css';
+import 'react-calendar/dist/Calendar.css';
 import logo_light from '../../assets/logo-white.png'
 import logo_dark from '../../assets/logo-black.png'
 import toggle_light from '../../assets/night.png'
@@ -16,7 +17,7 @@ interface ThemeProps {
 
 export const Navbar = ({theme, setTheme, dateChange, date}: ThemeProps) => {
     const toggle_mode = () => {
-        theme == 'light' ? setTheme('dark') : setTheme('light')
+        theme === 'light' ? setTheme('dark') : setTheme('light')
     }
     type ValuePiece = Date | null;
 
@@ -25,7 +26,7 @@ export const Navbar = ({theme, setTheme, dateChange, date}: ThemeProps) => {
 
     return (
         <div className={`navbar ${theme}`}>
-            <img src={theme == 'light' ? logo_light : logo_dark} alt="" className="logo"/>
+            <img src={theme === 'light' ? logo_light : logo_dark} alt="" className="logo"/>
             <DateRangePicker className={'ms-5'} onChange={onChange} value={value}/>
             <ul className="font-bold">
                 <li>Home</li>
@@ -33,7 +34,7 @@ export const Navbar = ({theme, setTheme, dateChange, date}: ThemeProps) => {
                 <li>Specials</li>
                 <li>Contact</li>
             </ul>
-            <img onClick={() => {toggle_mode()}} src={theme == 'light' ? toggle_light : toggle_dark} alt="" className="toggle-icon"/>
+            <img onClick={() => {toggle_mode()}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className="toggle-icon"/>
         </div>
     )
 }

@@ -21,7 +21,6 @@ export const Bar = () => {
     };
 
     useEffect(() => {
-        const data = {}
         const lookup: DataLookup = new DataLookup()
         const convertedDataValue: GraphData = lookup.convertBarData(size, type);
         setConvertedData(convertedDataValue);
