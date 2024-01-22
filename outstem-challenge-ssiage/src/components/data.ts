@@ -2,7 +2,7 @@ import orders from "../data/order_data.json"
 import prices from "../data/pricing_data.json";
 import reviews from "../data/review_data.json";
 
-interface sortedData {
+export interface sortedData {
     month: string[]
     total: number[]
 }
@@ -10,6 +10,33 @@ interface sortedData {
 interface Item {
     type: string
     size: string
+}
+
+interface BarChartData {
+    location: string
+    value: number
+    color: string
+}
+
+export interface GraphData {
+    stores: string[]
+    values: object[]
+  }
+
+interface PizzaOrder {
+    order_id: number;
+    store: string;
+    items: PizzaItem[];
+    date: string;
+  }
+  
+interface PizzaItem {
+    type: string;
+    size: string;
+}
+
+export interface PieSectionProps{
+    theme: string
 }
 
 export class DataLookup{ 
@@ -63,6 +90,58 @@ export class DataLookup{
         monthlyRevenue.total.forEach(element => { total+= element});
         return total
     }
+
+
+    //bar graph
+    sortBarData = (size: string, type: string): Record<string, number> => {
+        const orderLookup: Record<string, number> = {
+          "Kanata": 0,
+          "Orleans": 0,
+          "The Glebe": 0,
+          "Sandy Hill": 0,
+          "Downtown": 0,
+        }
+  
+        for (const i of orders) {
+          const order: PizzaOrder = i as PizzaOrder;
+          for (const subitem of order.items){
+            let item = subitem as PizzaItem;
+            //console.log(item.type, item.size)
+            if ((item.size == size || size == '') && (item.type == type || type == '')){
+              orderLookup[i.store] += 1;
+            }
+          }
+        }
+        return orderLookup
+      }
+  
+    convertBarData = (size: string, type: string): GraphData => {
+          const barChartDataArr: BarChartData[] = [];
+          const finalResult: GraphData = {"stores": [], "values": []}
+          const result: Record<string, number> = this.sortBarData(size, type);
+  
+          for (const i of Object.keys(result)) {
+              const pieChartItem: BarChartData = {
+                  location: i,
+                  value: result[i],
+                  color: 'red'
+              };
+              barChartDataArr.push(pieChartItem)
+          }
+  
+          let values: number[] = []
+          let finalData: object = {"data": []}
+  
+          for (const i of barChartDataArr) {
+            finalResult.stores.push(i.location);
+            values.push(i.value)
+          }
+          finalResult.values = [{
+            "data": values
+          }]
+        return finalResult
+      }
+
 } 
 
 

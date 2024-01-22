@@ -8,7 +8,6 @@ interface BarSectionProps {
 }
 
 export const BarSection = ({theme}: BarSectionProps) => {
-
     const scrollToElement = (elementId: string) => {
         const targetElement = document.getElementById(elementId);
     

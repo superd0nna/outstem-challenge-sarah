@@ -1,74 +1,65 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import orders from '../data/order_data.json'
 import { BarChart } from "@mui/x-charts";
+import { DataLookup, GraphData } from "./data";
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
-
-interface BarChartData {
-    location: string
-    value: number
-    color: string
-}
-
-interface GraphData {
-  stores: string[]
-  values: object[]
-}
 
 export const Bar = () => {
     const init: GraphData = {"stores": [], "values": []};
     const [convertedData, setConvertedData] = useState<GraphData>(init);
+    const [type, setType] = React.useState('');
+    const [size, setSize] = React.useState('');
+
+
+    const handleTypeChange = (event: SelectChangeEvent) => {
+      setType(event.target.value as string);
+    };
+
+    const handleSizeChange = (event: SelectChangeEvent) => {
+      setSize(event.target.value as string)
+    };
+
     useEffect(() => {
         const data = {}
-        const convertedDataValue: GraphData = convertData(data);
+        const lookup: DataLookup = new DataLookup()
+        const convertedDataValue: GraphData = lookup.convertBarData(size, type);
         setConvertedData(convertedDataValue);
-    }, [])
-
-    const sortData = (data: object): Record<string, number> => {
-      const orderLookup: Record<string, number> = {
-        "Kanata": 0,
-        "Orleans": 0,
-        "The Glebe": 0,
-        "Sandy Hill": 0,
-        "Downtown": 0,
-      }
-
-      for (const i of orders) {
-          orderLookup[i.store] += i.items.length;
-      }
-      return orderLookup
-    }
-
-    const convertData = (data: object): GraphData => {
-        const barChartDataArr: BarChartData[] = [];
-        const finalResult: GraphData = {"stores": [], "values": []}
-        const result: Record<string, number> = sortData(barChartDataArr);
-
-        for (const i of Object.keys(result)) {
-            const pieChartItem: BarChartData = {
-                location: i,
-                value: result[i],
-                color: 'red'
-            };
-            barChartDataArr.push(pieChartItem)
-        }
-
-        let values: number[] = []
-        let finalData: object = {"data": []}
-
-        for (const i of barChartDataArr) {
-          finalResult.stores.push(i.location);
-          values.push(i.value)
-        }
-        finalResult.values = [{
-          "data": values
-        }]
-      return finalResult
-    }
+    }, [size, type])
 
 
     return (
       <div>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Pizza Type</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={type}
+            label="Type"
+            onChange={handleTypeChange}
+          >
+            <MenuItem value={'Cheese'}>Cheese</MenuItem>
+            <MenuItem value={'Pepperoni'}>Pepperoni</MenuItem>
+            <MenuItem value={'Deluxe'}>Deluxe</MenuItem>
+            <MenuItem value={'Hawaiian'}>Hawaiian</MenuItem>
+            <MenuItem value={'Meatlovers'}>Meatlovers</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl  fullWidth className="mt-3">
+          <InputLabel id="demo-simple-select-label">Pizza Size</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={size}
+            label="Size"
+            onChange={handleSizeChange}
+          >
+            <MenuItem value={'S'}>Small</MenuItem>
+            <MenuItem value={'M'}>Medium</MenuItem>
+            <MenuItem value={'L'}>Large</MenuItem>
+          </Select>
+        </FormControl>
         <BarChart
           xAxis={[{ scaleType: 'band', data: convertedData.stores }]}
           series={convertedData.values}

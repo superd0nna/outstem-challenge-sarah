@@ -1,17 +1,13 @@
 import React from "react";
 import {Pie} from "../Pie";
 import { Button } from "@mui/material";
+import { PieSectionProps } from "../data";
 import "./PieSection.css";
 
-
-interface PieSectionProps{
-    theme: string
-}
 
 export const PieSection = ({theme}: PieSectionProps) => {
     const scrollToElement = (elementId: string) => {
         const targetElement = document.getElementById(elementId);
-    
         if (targetElement) {
           // Using smooth scroll behavior for a smoother transition
           targetElement.scrollIntoView({ behavior: 'smooth' });

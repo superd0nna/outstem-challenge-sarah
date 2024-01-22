@@ -10,6 +10,7 @@ import { LineSection } from "../components/HomeSections/LineSection";
 export const Home = () => {
     const currTheme = localStorage.getItem('currTheme')
     const [theme, setTheme] = useState(currTheme? currTheme : 'light');
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
         localStorage.setItem('currTheme', theme)
@@ -17,7 +18,7 @@ export const Home = () => {
 
     return (
         <div >
-            <Navbar theme={theme} setTheme={setTheme}/>
+            <Navbar date={date} dateChange={setDate} theme={theme} setTheme={setTheme}/>
             <LandingPage theme={theme}/>
             <PieSection theme={theme}/>
             <BarSection theme={theme}/>
