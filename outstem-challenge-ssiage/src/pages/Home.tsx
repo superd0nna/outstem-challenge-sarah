@@ -18,9 +18,9 @@ export const Home = () => {
 
     return (
         <div >
-            <Navbar date={date} dateChange={setDate} theme={theme} setTheme={setTheme}/>
+            <Navbar theme={theme} setTheme={setTheme} date={date} dateChange={setDate}/>
             <LandingPage theme={theme}/>
-            <PieSection theme={theme}/>
+            <PieSection date={date} theme={theme}/>
             <BarSection theme={theme}/>
             <RevenueSection theme={theme}/>
             <LineSection theme = {theme}/>

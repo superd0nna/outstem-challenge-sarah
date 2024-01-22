@@ -9,7 +9,7 @@ import toggle_dark from '../../assets/day.png'
 import './Navbar.css'
 
 interface ThemeProps {
-    theme: string; // Assuming 'theme' is a string, you can adjust the type accordingly
+    theme: string; 
     setTheme: (newTheme: string) => void;
     date: Date
     dateChange: (newDate: Date) => void;
@@ -26,8 +26,8 @@ export const Navbar = ({theme, setTheme, dateChange, date}: ThemeProps) => {
 
     return (
         <div className={`navbar ${theme}`}>
-            <img src={theme === 'light' ? logo_light : logo_dark} alt="" className="logo"/>
-            <DateRangePicker className={'ms-5'} onChange={onChange} value={value}/>
+            <img src={theme === 'light' ? logo_light : logo_dark} alt="logo" className="logo"/>
+            <DateRangePicker className={'ms-4'} onChange={onChange} value={value}/>
             <ul className="font-bold">
                 <li>Home</li>
                 <li>Menu</li>

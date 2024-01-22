@@ -35,9 +35,6 @@ interface PizzaItem {
     size: string;
 }
 
-export interface PieSectionProps{
-    theme: string
-}
 
 export interface PieChartData  {
     label: string
@@ -69,7 +66,7 @@ export class DataLookup{
     }
 
     // Function that tallys up the sentiment occurences.
-    sortPieData = (data: object): Record<string, number> => {
+    sortPieData = (date: Date, data: object): Record<string, number> => {
         const sentimentLookup: Record<string, number> = {
             "happy": 0,
             "angry": 0,
@@ -83,9 +80,9 @@ export class DataLookup{
         return sentimentLookup;
     }
 
-    convertPieData = (data: object): PieChartData[] => {
+    convertPieData = (date: Date): PieChartData[] => {
         const pieChartDataArr: PieChartData[] = [];
-        const result: Record<string, number> = this.sortPieData(pieChartDataArr);
+        const result: Record<string, number> = this.sortPieData(date, pieChartDataArr);
 
         for (const i of Object.keys(result)) {
             const pieChartItem: PieChartData = {
@@ -164,7 +161,6 @@ export class DataLookup{
           const order: PizzaOrder = i as PizzaOrder;
           for (const subitem of order.items){
             let item = subitem as PizzaItem;
-            //console.log(item.type, item.size)
             if ((item.size === size || size === '') && (item.type === type || type === '')){
               orderLookup[i.store] += 1;
             }

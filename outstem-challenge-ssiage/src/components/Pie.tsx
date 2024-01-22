@@ -9,7 +9,12 @@ interface PieChartData  {
     color: string
 }
 
-export const Pie = () => {
+
+interface PieProps{
+    date: Date
+}
+
+export const Pie = ({date}: PieProps) => {
 
     // Initialize the useState variables
     // Dynamically update the chart based on changes made to the data
@@ -19,7 +24,7 @@ export const Pie = () => {
     useEffect(() => {
         const data = {}
         const lookup: DataLookup = new DataLookup()
-        const convertedDataValue: PieChartData[] = lookup.convertPieData(data);
+        const convertedDataValue: PieChartData[] = lookup.convertPieData(date);
         setConvertedData(convertedDataValue);
     }, [])
 

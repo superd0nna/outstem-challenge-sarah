@@ -1,11 +1,15 @@
 import React from "react";
 import {Pie} from "../Pie";
 import { Button } from "@mui/material";
-import { PieSectionProps } from "../data";
 import "./PieSection.css";
 
 
-export const PieSection = ({theme}: PieSectionProps) => {
+export interface PieSectionProps{
+    theme: string
+    date: Date
+}
+
+export const PieSection = ({theme, date}: PieSectionProps) => {
     const scrollToElement = (elementId: string) => {
         const targetElement = document.getElementById(elementId);
         if (targetElement) {
@@ -28,7 +32,7 @@ export const PieSection = ({theme}: PieSectionProps) => {
             </div>
             <div className={`pie-subsection graph-${theme}`}>
                 <div className={`pie-chart mb-3`}>
-                    <Pie/>
+                    <Pie date={date}/>
                     <p className={`mt-3 figure-${theme}`}><b>Figure 1:</b> Pie chart containing the customer reviews for Slice of Pi for the year of 2023.</p>
                 </div>
             </div>
